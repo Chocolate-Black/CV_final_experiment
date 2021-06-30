@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>998</width>
+    <height>841</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>19</y>
+      <width>961</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>961</width>
+       <height>411</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>450</y>
+      <width>961</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>961</width>
+       <height>321</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>998</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionimport_images"/>
+    <addaction name="actionclear"/>
+    <addaction name="actionadd_camera_name"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>稀疏重建</string>
+    </property>
+    <widget class="QMenu" name="menuSfM">
+     <property name="title">
+      <string>SfM</string>
+     </property>
+     <addaction name="actionincreased_sfm"/>
+     <addaction name="actionglobal_sfm"/>
+    </widget>
+    <addaction name="actionIntrinsics_analysis"/>
+    <addaction name="actionCompute_features"/>
+    <addaction name="actionCompute_matches"/>
+    <addaction name="menuSfM"/>
+    <addaction name="actionconvert_to_PMVS"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>稠密重建</string>
+    </property>
+    <addaction name="actionCMVS"/>
+    <addaction name="actionPMVS"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>一键重建</string>
+    </property>
+    <addaction name="actionstart"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionimport_images">
+   <property name="text">
+    <string>import images</string>
+   </property>
+  </action>
+  <action name="actionincreased_sfm">
+   <property name="text">
+    <string>Incremental SfM</string>
+   </property>
+  </action>
+  <action name="actionglobal_sfm">
+   <property name="text">
+    <string>Global SfM</string>
+   </property>
+  </action>
+  <action name="actionCMVS">
+   <property name="text">
+    <string>CMVS</string>
+   </property>
+  </action>
+  <action name="actionPMVS">
+   <property name="text">
+    <string>PMVS</string>
+   </property>
+  </action>
+  <action name="actionclear">
+   <property name="text">
+    <string>clear</string>
+   </property>
+  </action>
+  <action name="actionIntrinsics_analysis">
+   <property name="text">
+    <string>Intrinsics analysis</string>
+   </property>
+  </action>
+  <action name="actionCompute_features">
+   <property name="text">
+    <string>Compute features</string>
+   </property>
+  </action>
+  <action name="actionCompute_matches">
+   <property name="text">
+    <string>Compute matches</string>
+   </property>
+  </action>
+  <action name="actionadd_camera_name">
+   <property name="text">
+    <string>add camera name</string>
+   </property>
+  </action>
+  <action name="actionconvert_to_PMVS">
+   <property name="text">
+    <string>convert to PMVS</string>
+   </property>
+  </action>
+  <action name="actionstart">
+   <property name="text">
+    <string>start</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

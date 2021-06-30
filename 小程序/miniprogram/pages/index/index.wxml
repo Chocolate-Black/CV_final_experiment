@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="headline">
+    <view class="headline_text">
+      <text>3D重建</text>
+    </view>
+  </view>
+  <view class="weui-uploader">
+    <view class="imagebox">
+      <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+        <image
+                src="{{item}}"
+                data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+        </image>
+      <van-cell-group>
+        <van-field
+          required
+          clearable
+          label="相机型号"
+          placeholder="请输入相机型号"
+          bind:change="model_name_change"
+          data-id="{{index}}"
+        />
+
+        <van-field
+          required
+          clearable
+          label="焦距"
+          placeholder="请输入焦距（单位：mm）"
+          bind:change="f_length_change"
+          data-id="{{index}}"
+        />
+      </van-cell-group>
+    </view>
+     
+      <!-- 用来提示用户上传图片 -->
+    <view wx:if="{{flag == 1}}" class='download_link'>
+      <van-field  label="下载链接" value="{{modelurl}}" />
+    </view>
+    <view class="weui-uploader__input-box pic" bindtap="chooseImg"> </view>
+    </view>
+    <view wx:if="{{flag == 0}}">
+        <button class="upload-img-btn" bindtap="chooseImg" type='primary'>拍照  / 上传</button>
+    </view>
+    <view wx:else>
+    <button class="upload-img-btn" bindtap="chooseImg" type='primary'>拍照  / 上传</button>
+      <button class="upload-img-btn" bindtap="upload" type='primary'>提交</button>
+      <button class="upload-img-btn" bindtap="rechoose" type='primary'>重新上传图片</button>
+      <button class="upload-img-btn" bindtap="reconstruct" type='primary'>重建</button>
+      <button class="upload-img-btn" bindtap="check" type='primary'>查看结果</button>
+      <image
+                src="{{imgurl}}"
+               mode="aspectFill" bindtap="viewpre">
+                  
+        </image>
+    </view>
+
+  </view>
+
+</view>
